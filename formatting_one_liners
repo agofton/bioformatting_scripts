@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Add a column to the beginning of a tsv file (eg. label blast 6 output with sampleID)
+sampleID=x
+awk 'BEGIN{FS=OSF="\t"}{print "sampleID" OFS $0}' file.blast > file.labeled.blast
+
+# Cut off any line at the first whitespace
+
+sed 's/\s.*$//' file.fasta > file.no_whitespace.fasta
